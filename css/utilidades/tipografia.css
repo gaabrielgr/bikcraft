@@ -1,3 +1,8 @@
+/* primeiro é o peso
+segundo tamanho da fonte
+terceiro line height
+depois a familia da fonte */
+
 .font-1-xs {
   font: 500 0.75rem/1.35 "Poppins", sans-serif;
 }
