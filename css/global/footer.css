@@ -12,6 +12,9 @@
 .footer-informacoes h3 {
   margin-bottom: 32px;
 }
+.footer-contato ul {
+  margin-bottom: 32px;
+}
 .footer-informacoes a:hover {
   color: var(--cor-0);
 }
