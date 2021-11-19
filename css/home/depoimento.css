@@ -2,7 +2,6 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   background-color: var(--cor-p1);
-  overflow: hidden;
 }
 
 .depoimento img {
@@ -12,34 +11,62 @@
   border-radius: 0px;
 }
 
-.depoimento-conteudo {
-  padding: 40px 40px 80px 80px;
-  align-self: end;
-}
-.depoimento-conteudo p {
-  max-width: 32ch;
-  font-family: "Merriweather", sans-serif;
-  font-style: italic;
-  font-weight: 900;
-  margin-bottom: 32px;
-  position: relative;
-}
-
-.depoimento p::after,
-.depoimento p::before {
-  font-size: 5rem;
-  color: var(--cor-p2);
-  position: absolute;
-}
-
 .depoimento p::before {
   content: "“";
-  top: -20px;
   left: -50px;
+  top: -20px;
+}
+.depoimento p::after {
+  content: "”";
+  bottom: -60px;
+}
+
+.depoimento-conteudo {
+  padding: 40px 40px 80px 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  overflow: hidden;
+}
+
+.depoimento-conteudo blockquote {
+  margin-top: auto;
+}
+
+.depoimento-conteudo p {
+  max-width: 32ch;
+  font-family: Merriweather;
+  font-style: italic;
+  font-weight: 900;
+  margin-bottom: 1em;
+  position: relative;
+  z-index: 0;
+  display: block;
+}
+
+.depoimento p::before,
+.depoimento p::after {
+  color: var(--cor-p2);
+  font-size: 5rem;
+  position: absolute;
+  z-index: -1;
+}
+
+/* .depoimento p::before {
+  content: "â€œ";
+  left: -50px;
+  top: -20px;
 }
 
 .depoimento p::after {
-  content: "”";
+  content: "â€";
+  bottom: -60px;
+}
+ */
+@media (min-width: 1200px) {
+  .depoimento img {
+    max-height: 520px;
+  }
 }
 
 @media (max-width: 800px) {
@@ -52,6 +79,10 @@
   }
   .depoimento-conteudo {
     padding: 40px 20px;
-    justify-self: center;
+    align-items: center;
+    background: none;
+  }
+  .depoimento p::before {
+    left: 0px;
   }
 }
