@@ -1,3 +1,4 @@
+/* Funções Pagina Seguros */
 function initTabNav() {
   const tabMenu = document.querySelectorAll(".js-tabmenu li");
   const tabContent = document.querySelectorAll(".js-tabcontent section");
@@ -37,3 +38,25 @@ function accordionSeguro() {
   }
 }
 accordionSeguro();
+
+/* Funções página Index */
+function scrollSuave() {
+  const sections = document.querySelectorAll(".js-scroll");
+  if (sections.length) {
+    const metadeTela = window.innerHeight * 0.6;
+    function animarScroll() {
+      sections.forEach((section) => {
+        const sectionTop = section.getBoundingClientRect().top;
+        if (sectionTop - metadeTela < 0) {
+          section.classList.add("ativo");
+        } else {
+          section.classList.remove("ativo");
+        }
+      });
+    }
+
+    animarScroll();
+    window.addEventListener("scroll", animarScroll);
+  }
+}
+scrollSuave();
